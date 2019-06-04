@@ -137,9 +137,7 @@ pub mod check {
 
     /// Test against all rules
     #[allow(unused_variables)]
-    pub fn from_u8(
-        file: &[u8], mimetype: &str, cache: &CacheItem, filecache: &CacheItem
-    ) -> bool {
+    pub fn from_u8(file: &[u8], mimetype: &str, cache: CacheItem) -> bool {
 		
 		// Get mimetype in case user provides alias
 		let mimetype = match super::ALIASES.get(mimetype) {
@@ -166,9 +164,7 @@ pub mod check {
     /// This only exists for the case of a direct match_filepath call
     /// and even then we could probably get rid of this...
     #[allow(unused_variables)]
-    pub fn from_filepath(
-        filepath: &Path, mimetype: &str, cache: &CacheItem, filecache: &CacheItem
-    ) -> bool{
+    pub fn from_filepath(filepath: &Path, mimetype: &str, cache: CacheItem) -> bool{
         use std::fs::File;
         use std::io::Read;
         
@@ -209,6 +205,6 @@ pub mod check {
             Err(_) => return false
         }
         
-        from_u8(b.as_slice(), mimetype, cache, &CacheItem::default())
+        from_u8(b.as_slice(), mimetype, cache)
     }
 }
