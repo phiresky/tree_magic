@@ -5,7 +5,7 @@ extern crate petgraph;
 extern crate fnv;
 use petgraph::prelude::*;
 use fnv::FnvHashMap;
-use MIME;
+use crate::MIME;
 use super::MagicRule;
 
 /// Dummy cache type
@@ -38,7 +38,7 @@ pub mod init {
     extern crate std;
     extern crate fnv;
     use fnv::FnvHashMap;
-    use MIME;
+    use crate::MIME;
     
     /// Read all subclass lines from file
     fn read_subclasses() -> Result<Vec<(MIME, MIME)>, std::io::Error> {
@@ -112,7 +112,7 @@ pub mod check {
     extern crate petgraph;
     use std::path::Path;
     use petgraph::prelude::*;
-    use fdo_magic;
+    use crate::fdo_magic;
     use super::super::super::{CacheItem};
     
     /// Test against all rules

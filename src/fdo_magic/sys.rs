@@ -9,7 +9,7 @@ extern crate petgraph;
 extern crate fnv;
 use petgraph::prelude::*;
 use fnv::FnvHashMap;
-use MIME;
+use crate::MIME;
 use super::MagicRule;
 
 /// Dummy cache type
@@ -46,7 +46,7 @@ pub mod init {
     use std::io::prelude::*;
     use std::io::BufReader;
     use std::fs::File;
-    use MIME;
+    use crate::MIME;
     
     /// Read all subclass lines from file
     fn read_subclasses() -> Result<Vec<(MIME, MIME)>, std::io::Error> {

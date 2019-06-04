@@ -17,7 +17,7 @@ pub mod init {
 
     extern crate fnv;
     use fnv::FnvHashMap;
-    use MIME;
+    use crate::MIME;
     
     #[cfg(feature="staticmime")]
     pub fn get_supported() -> Vec<MIME> {

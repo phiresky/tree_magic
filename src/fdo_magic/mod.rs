@@ -41,7 +41,7 @@ pub mod ruleset {
     use std::str;
 	use petgraph::prelude::*;
 	use fnv::FnvHashMap;
-    use MIME;
+    use crate::MIME;
 
     // Below functions from https://github.com/badboy/iso8601/blob/master/src/helper.rs
     // but modified to be safe and provide defaults
